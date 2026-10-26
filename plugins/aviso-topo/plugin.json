@@ -1,0 +1,7 @@
+{
+  "nome": "Barra de aviso",
+  "descricao": "Mostra uma faixa de aviso no topo do site (promoções, comunicados) com período de exibição.",
+  "versao": "1.0.0",
+  "autor": "Equipe CMS",
+  "configuracao": "plugin.php?p=aviso-topo"
+}

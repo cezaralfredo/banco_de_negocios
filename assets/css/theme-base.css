@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Camada de tema — aplica as variáveis centralizadas (definidas no tema ativo
+   e personalizáveis em Admin › Temas e layout) aos componentes do site.
+   ========================================================================== */
+:root{--page-bg:#fff;--surface:#fff;--footer-bg:#081b2d;--hero-from:#081f31;--hero-to:#6e183b;--site-font:'Hanken Grotesk',Arial,sans-serif;--heading-font:'Poppins',Arial,sans-serif;--btn-radius:999px;--container:1180px;--radius:14px}
+body{background:var(--page-bg);color:var(--ink);font-family:var(--site-font)}
+@media(min-width:901px){.container{width:min(var(--container),calc(100% - 40px))}:root{--gutter:calc((100vw - min(var(--container),100vw - 40px)) / 2)}}
+h1,h2,h3,h4,.brand,.hero h1,.hero .h1-like,.search-card h2,.section h2,.page-hero h1,.profile-hero h1,.cta h2,.news-row h2,.content-page h1,.auth-card h1{font-family:var(--heading-font)}
+.section h2,.search-card h2,.news-row h2 a,.news-card h3 a,.ad-content h3,.brand{color:var(--navy)}
+.btn,.advanced-search .btn{border-radius:var(--btn-radius)}
+.btn-primary{background:var(--wine);border-color:var(--wine)}
+.btn-primary:hover{background:var(--wine-dark);border-color:var(--wine-dark);color:#fff}
+.site-footer{background:var(--footer-bg)}
+.topbar{background:var(--wine-dark)}
+.hero,.banner-slide:not([style*="background-image"]),.page-hero,.profile-hero{background-image:radial-gradient(circle at 75% 15%,color-mix(in srgb,var(--pink) 28%,transparent),transparent 32%),linear-gradient(110deg,var(--hero-from) 0%,color-mix(in srgb,var(--hero-from) 55%,var(--hero-to)) 55%,var(--hero-to) 100%)}
+.hero:after{background:var(--wine)}
+.search-card,.ad-card,.category-card,.news-card,.profile-body,.profile-sidebar,.auth-card,.content-page,.cookie-banner,.a11y-floating{background-color:var(--surface)}
+.search-card,.ad-card,.news-card,.profile-sidebar,.cta,.empty-state,.profile-hero{border-radius:var(--radius)}
+.category-card{border-radius:calc(var(--radius) * .6)}
+.hero-ad-card{border-radius:calc(var(--radius) * .75)}
+.alphabet a.selected,.alphabet a:hover,.filter-chip:hover,.a11y-row[aria-pressed="true"],.sidebar-links a.active{background:var(--wine)}
+.section-heading>a,.news-card-more,.filter-chip,.back-link,.cta h2,.category-card small{color:var(--wine)}
+.filter-chip{background:color-mix(in srgb,var(--wine) 10%,#fff)}
+.cta{background:color-mix(in srgb,var(--wine) 6%,var(--page-bg))}
+.a11y-column{background:var(--wine)}
+.access-trigger{color:var(--wine)!important}
+/* Aviso para quem navega durante a manutenção (bypass) */
+.maintenance-bypass-bar{position:sticky;top:0;z-index:1100;background:#ffb703;color:#1d1d1d;font:600 13px Arial,sans-serif;text-align:center;padding:7px 12px}
+.maintenance-bypass-bar a{color:#1d1d1d;text-decoration:underline}
+.preview-bar{background:#fff4d6;border:1px solid #ffd27a;border-radius:10px;padding:9px 14px;margin:10px 0;font-size:14px}
+.wf-badge{display:inline-block;font:700 11px/1 Arial,sans-serif;border-radius:20px;padding:5px 10px;letter-spacing:.2px}
+.wf-rascunho{background:#eef0f3;color:#4b5563}.wf-revisao{background:#fff1d6;color:#8a5a00}.wf-aprovado{background:#e1f0ff;color:#0b5394}.wf-publicado{background:#e6f7ed;color:#19733e}.wf-arquivado{background:#2f3542;color:#fff}

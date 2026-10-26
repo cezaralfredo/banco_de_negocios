@@ -1,0 +1,29 @@
+# ---------------------------------------------------------------
+# CMS — configurações do Apache
+# ---------------------------------------------------------------
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Bloqueia pastas internas
+  RewriteRule ^(config|core|storage|sql|docs)(/|$) - [F,L]
+  RewriteRule ^plugins/[^/]+/.+\.(php|json)$ - [F,L]
+  # robots.txt e sitemap.xml dinâmicos
+  RewriteRule ^robots\.txt$ robots.php [L]
+  RewriteRule ^sitemap\.xml$ sitemap.php [L]
+  # URLs amigáveis (ative em Admin › Configurações globais › SEO)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^noticia/([a-z0-9-]+)/?$ noticia.php?slug=$1 [L,QSA]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^pagina/([a-z0-9-]+)/?$ pagina.php?slug=$1 [L,QSA]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^anuncio/([a-z0-9-]+)/?$ perfil.php?slug=$1 [L,QSA]
+</IfModule>
+
+<FilesMatch "\.(json|sql|log|key|md)$">
+  Require all denied
+</FilesMatch>

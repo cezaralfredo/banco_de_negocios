@@ -1,0 +1,7 @@
+{
+  "nome": "WhatsApp flutuante",
+  "descricao": "Exibe um botão de WhatsApp fixo no canto da tela em todas as páginas do site.",
+  "versao": "1.0.0",
+  "autor": "Equipe CMS",
+  "configuracao": "plugin.php?p=whatsapp-flutuante"
+}

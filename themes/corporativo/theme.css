@@ -1,0 +1,11 @@
+/* Tema Corporativo */
+.hero:after{background:var(--page-bg);opacity:1;height:120px;bottom:-95px}
+.search-card,.ad-card,.category-card,.news-card,.profile-sidebar,.profile-body{border:1px solid #e3e8f2;box-shadow:0 2px 10px rgba(10,31,68,.05)}
+.category-icon{border-radius:10px!important;background:var(--wine)!important}
+.category-card:nth-child(2n) .category-icon{background:var(--pink)!important}
+.site-header{border-bottom:1px solid #e3e8f2}
+.site-header nav a{text-transform:uppercase;letter-spacing:.4px;font-size:12px}
+.hero h1,.hero .h1-like{letter-spacing:-.4px;font-weight:700}
+.eyebrow{color:#9cc2ff}
+.cta{background:#eaf1ff}
+.a11y-column{border-radius:8px 0 0 8px}

@@ -1,0 +1,10 @@
+/* Tema Elegante */
+.hero:after{display:none}
+.hero h1,.hero .h1-like{font-weight:700;letter-spacing:0}
+.eyebrow{color:var(--pink);letter-spacing:3px}
+.btn{text-transform:uppercase;letter-spacing:1px;font-size:11px}
+.category-icon{background:transparent!important;color:var(--wine)!important;border:1px solid var(--pink)}
+.ad-card,.news-card,.category-card,.search-card{box-shadow:none;border:1px solid #ece3d3}
+.site-header nav a{font-weight:500;letter-spacing:.6px}
+.cta{background:#f3ece0}
+.topbar{letter-spacing:.4px}

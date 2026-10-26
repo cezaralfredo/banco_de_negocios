@@ -1,0 +1,121 @@
+/* ==========================================================================
+   Tipografia do site (v8) — hierarquia inspirada no Velzon
+   Base de leitura 15px · textos de apoio 13px · mínimo 12px
+   Títulos com peso 600 (sem 800), entrelinha 1.25; textos com entrelinha 1.6.
+   Todas as medidas vêm destas variáveis: ajuste aqui para mudar o site inteiro.
+   ========================================================================== */
+:root{
+  --fs-xs:.75rem;     /* 12px — selos, datas, notas */
+  --fs-sm:.8125rem;   /* 13px — textos de apoio, metadados, rodapé */
+  --fs-base:.9375rem; /* 15px — texto padrão */
+  --fs-md:1rem;       /* 16px — destaque, leitura longa */
+  --fs-lg:1.125rem;   /* 18px — títulos de card grandes */
+  --fs-h4:1.0625rem;  /* 17px — títulos de cards */
+  --fs-h3:1.25rem;    /* 20px */
+  --fs-h2:1.5rem;     /* 24px — títulos de seção */
+  --fs-h1:2rem;       /* 32px — título de página */
+  --fs-display:2.375rem; /* 38px — título do banner */
+  --fw-regular:400;--fw-medium:500;--fw-semibold:600;
+  --lh-text:1.6;--lh-head:1.25;
+  --text-muted-c:#5f6b7d;
+}
+body{font-size:var(--fs-base);line-height:var(--lh-text);font-weight:var(--fw-regular);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+h1,h2,h3,h4,h5,h6{font-weight:var(--fw-semibold);line-height:var(--lh-head);letter-spacing:-.01em}
+p{margin-bottom:.9em}
+small{font-size:var(--fs-sm)}
+.btn{font-size:var(--fs-sm);font-weight:var(--fw-medium);letter-spacing:0;padding:.6rem 1.25rem}
+.eyebrow{font-size:var(--fs-xs)!important;font-weight:var(--fw-semibold);letter-spacing:.08em}
+
+/* Barra superior e navegação */
+.topbar{font-size:var(--fs-sm)}
+.quick-search input{font-size:var(--fs-sm)}
+.lang-control .lang-toggle{font-size:var(--fs-xs)}
+.brand strong{font-weight:var(--fw-semibold);font-size:1.25rem;letter-spacing:.01em}
+.brand small{font-family:var(--site-font,'Hanken Grotesk',Arial,sans-serif)!important;font-size:var(--fs-xs)!important;font-weight:var(--fw-regular)!important;margin-top:4px;letter-spacing:.02em}
+.site-header nav a{font-size:var(--fs-sm);font-weight:var(--fw-medium)}
+.submenu a{font-size:var(--fs-sm)!important}
+
+/* Banner */
+.hero h1,.hero .h1-like{font-size:var(--fs-display);font-weight:var(--fw-semibold);line-height:1.18;letter-spacing:-.02em}
+.hero .hero-sub{font-size:var(--fs-md);line-height:1.55}
+.hero-actions .btn{font-size:var(--fs-base);padding:.7rem 1.4rem}
+.hero-benefit-list b{font-size:var(--fs-base);font-weight:var(--fw-semibold)}
+.hero-benefit-list small{font-size:var(--fs-sm)}
+.hero-ad-info b{font-size:.875rem;font-weight:var(--fw-semibold)}
+.hero-ad-info small{font-size:var(--fs-xs)}
+
+/* Busca */
+.search-card h2{font-size:var(--fs-h2);font-weight:var(--fw-semibold)}
+.search-card>p{font-size:var(--fs-sm)}
+.alphabet a{font-size:var(--fs-sm);font-weight:var(--fw-medium)}
+.advanced-search label{font-size:var(--fs-sm);height:44px}
+.advanced-search input,.advanced-search select{font-size:var(--fs-base)}
+.advanced-search .btn{font-size:var(--fs-base)}
+.popular{font-size:var(--fs-sm)}
+.popular a{font-size:var(--fs-sm)}
+.sort select{font-size:var(--fs-sm)}
+.results-bar strong{font-size:var(--fs-base);font-weight:var(--fw-semibold)}
+.filter-chip,.filter-clear{font-size:var(--fs-sm)}
+
+/* Seções e cards */
+.section h2,.section-heading h2{font-size:var(--fs-h2);font-weight:var(--fw-semibold);margin-bottom:.35rem}
+.section-heading p{font-size:var(--fs-base);color:var(--text-muted-c)}
+.section-heading>a{font-size:var(--fs-sm);font-weight:var(--fw-medium)}
+.category-card b{font-size:var(--fs-sm);font-weight:var(--fw-semibold)}
+.category-card small{font-size:var(--fs-xs);font-weight:var(--fw-medium)}
+.ad-content h3{font-size:var(--fs-h4);font-weight:var(--fw-semibold);margin-bottom:.15rem}
+.ad-content strong{font-size:var(--fs-xs);font-weight:var(--fw-semibold);text-transform:uppercase;letter-spacing:.04em;color:var(--wine)}
+.ad-content p{font-size:var(--fs-sm);line-height:1.55;color:var(--text-muted-c)}
+.ad-content>span{font-size:var(--fs-sm)}
+.ad-actions .btn{font-size:var(--fs-sm);padding:.45rem .9rem}
+.news-card h3{font-size:var(--fs-h4);font-weight:var(--fw-semibold)}
+.news-card p{font-size:var(--fs-sm);line-height:1.55}
+.news-row h2{font-size:var(--fs-h3);font-weight:var(--fw-semibold)}
+.news-row p{font-size:var(--fs-base)}
+.news-row time,.news-card time{font-size:var(--fs-xs);font-weight:var(--fw-semibold);letter-spacing:.03em}
+.news-card-more{font-size:var(--fs-sm);font-weight:var(--fw-semibold)}
+
+/* Promoção */
+.cta h2{font-size:var(--fs-h2);font-weight:var(--fw-semibold)}
+.cta p,.cta li{font-size:var(--fs-base);line-height:1.6}
+
+/* Páginas internas */
+.page-hero h1,.profile-hero h1{font-size:var(--fs-h1);font-weight:var(--fw-semibold)}
+.page-hero p,.profile-hero strong{font-size:var(--fs-base)}
+.profile-body h2,.page-content h2{font-size:var(--fs-h3);font-weight:var(--fw-semibold)}
+.page-content h3,.profile-blog h3{font-size:var(--fs-lg);font-weight:var(--fw-semibold)}
+.page-content,.profile-body p{font-size:var(--fs-md);line-height:1.75}
+.lead-text{font-size:var(--fs-lg)!important;line-height:1.6;font-weight:var(--fw-regular)!important}
+.profile-sidebar h2{font-size:var(--fs-lg);font-weight:var(--fw-semibold)}
+.sidebar-ad strong{font-size:var(--fs-sm);font-weight:var(--fw-semibold);line-height:1.35}
+.sidebar-ad small{font-size:var(--fs-xs)}
+.sidebar-links a{font-size:var(--fs-sm)}
+.back-link{font-size:var(--fs-sm)}
+.profile-meta{font-size:var(--fs-sm)}
+
+/* Formulários (cadastro, modais) */
+.auth-form label{font-size:var(--fs-sm);font-weight:var(--fw-medium)}
+.auth-form input:not([type=checkbox]){font-size:var(--fs-base)}
+.check-row{font-size:var(--fs-sm)!important}
+.modal-title{font-weight:var(--fw-semibold)}
+
+/* Rodapé e cookies */
+.site-footer h4{font-size:var(--fs-base);font-weight:var(--fw-semibold);margin-bottom:.75rem}
+.site-footer p,.site-footer a{font-size:var(--fs-sm);line-height:1.7}
+.footer-bottom{font-size:var(--fs-xs)}
+.cookie-copy strong{font-size:var(--fs-base);font-weight:var(--fw-semibold)}
+.cookie-copy p{font-size:var(--fs-sm)}
+.cookie-actions .btn{font-size:var(--fs-sm)}
+
+/* Acessibilidade */
+.a11y-row{font-size:var(--fs-sm);font-weight:var(--fw-medium)}
+
+@media(max-width:900px){
+  :root{--fs-display:2rem;--fs-h1:1.75rem;--fs-h2:1.375rem}
+}
+@media(max-width:600px){
+  :root{--fs-display:1.75rem;--fs-h1:1.5rem;--fs-h2:1.25rem;--fs-h3:1.125rem}
+  .hero .hero-sub{font-size:var(--fs-base)}
+  .section-heading{flex-wrap:wrap;align-items:flex-start;gap:.35rem 1rem}
+  .section-heading>:first-child{flex:1 1 100%}
+}

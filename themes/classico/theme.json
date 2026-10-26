@@ -1,0 +1,12 @@
+{
+  "nome": "Clássico",
+  "descricao": "Vinho e azul-petróleo, títulos fortes e botões em pílula. É o visual original do Banco de Negócios.",
+  "ordem": 1,
+  "preview": ["#9f1549", "#081f31", "#ef5d98", "#ffffff"],
+  "variaveis": {
+    "cor_primaria": "#9f1549", "cor_primaria_escura": "#74152f", "cor_destaque": "#ef5d98",
+    "cor_titulos": "#09213a", "cor_texto": "#14243b", "cor_fundo": "#ffffff", "cor_superficie": "#ffffff",
+    "cor_rodape": "#081b2d", "hero_inicio": "#081f31", "hero_fim": "#6e183b",
+    "fonte_texto": "Hanken Grotesk", "fonte_titulos": "Poppins", "raio": 14, "botoes": "pilula", "largura": "larga"
+  }
+}

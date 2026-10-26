@@ -1,0 +1,12 @@
+{
+  "nome": "Elegante",
+  "descricao": "Grafite e dourado sobre fundo creme, títulos com serifa (Playfair Display) e botões retos. Sofisticado.",
+  "ordem": 4,
+  "preview": ["#b08d57", "#1f1f24", "#d9b77e", "#faf7f2"],
+  "variaveis": {
+    "cor_primaria": "#9a7745", "cor_primaria_escura": "#1f1f24", "cor_destaque": "#d9b77e",
+    "cor_titulos": "#1f1f24", "cor_texto": "#2f2b27", "cor_fundo": "#faf7f2", "cor_superficie": "#ffffff",
+    "cor_rodape": "#1f1f24", "hero_inicio": "#1f1f24", "hero_fim": "#4a3b26",
+    "fonte_texto": "Lato", "fonte_titulos": "Playfair Display", "raio": 4, "botoes": "reto", "largura": "compacta"
+  }
+}

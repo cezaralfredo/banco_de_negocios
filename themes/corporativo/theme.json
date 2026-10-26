@@ -1,0 +1,12 @@
+{
+  "nome": "Corporativo",
+  "descricao": "Azul institucional, cinzas neutros, cantos discretos e tipografia Inter. Sóbrio e objetivo.",
+  "ordem": 2,
+  "preview": ["#0b5cff", "#0a1f44", "#00b3a4", "#f5f7fb"],
+  "variaveis": {
+    "cor_primaria": "#0b5cff", "cor_primaria_escura": "#0a1f44", "cor_destaque": "#00b3a4",
+    "cor_titulos": "#0a1f44", "cor_texto": "#1f2a3d", "cor_fundo": "#f5f7fb", "cor_superficie": "#ffffff",
+    "cor_rodape": "#0a1f44", "hero_inicio": "#0a1f44", "hero_fim": "#0b5cff",
+    "fonte_texto": "Inter", "fonte_titulos": "Inter", "raio": 8, "botoes": "arredondado", "largura": "larga"
+  }
+}

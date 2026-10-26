@@ -1,0 +1,10 @@
+/* Tema Natureza */
+.hero:after{background:var(--pink);opacity:.9}
+.category-icon{background:var(--wine)!important}
+.category-card:nth-child(2n) .category-icon{background:var(--pink)!important}
+.category-card:nth-child(3n) .category-icon{background:#2bb3a3!important}
+.ad-card,.news-card,.category-card{box-shadow:0 10px 30px rgba(11,59,46,.08)}
+.alphabet a{border-radius:50%}
+.cta{background:#e9f7ef}
+.hero-ad-card,.hero-benefit-icon{border-radius:18px}
+.eyebrow{color:#ffd2b3}

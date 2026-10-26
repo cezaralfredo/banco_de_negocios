@@ -1,0 +1,12 @@
+{
+  "nome": "Natureza",
+  "descricao": "Verde-esmeralda com laranja, cantos bem arredondados e a fonte Poppins. Amigável e moderno.",
+  "ordem": 3,
+  "preview": ["#0f8f5f", "#0b3b2e", "#ff8a3d", "#f7fbf8"],
+  "variaveis": {
+    "cor_primaria": "#0f8f5f", "cor_primaria_escura": "#0b3b2e", "cor_destaque": "#ff8a3d",
+    "cor_titulos": "#0b3b2e", "cor_texto": "#1d3a30", "cor_fundo": "#f7fbf8", "cor_superficie": "#ffffff",
+    "cor_rodape": "#0b3b2e", "hero_inicio": "#0b3b2e", "hero_fim": "#0f8f5f",
+    "fonte_texto": "Nunito", "fonte_titulos": "Poppins", "raio": 22, "botoes": "pilula", "largura": "larga"
+  }
+}
