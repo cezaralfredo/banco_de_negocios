@@ -1,0 +1,17 @@
+# Ambiente e credenciais
+.env
+.env.*
+config/local.php
+storage/app.key
+
+# Backups e logs locais
+storage/*/backups/*.zip
+storage/*/logs/*.log
+*.log
+
+# Arquivos do sistema operacional e IDE
+.DS_Store
+Thumbs.db
+ehthumbs.db
+.vscode/
+.idea/

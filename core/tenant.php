@@ -12,26 +12,49 @@ declare(strict_types=1);
 
 const BN_TENANTS_FILE = __DIR__ . '/../config/tenants.json';
 
+/** Carrega variáveis do arquivo .env da raiz do projeto, se existir. */
+function bn_load_env(): void
+{
+    static $loaded = false;
+    if ($loaded) return;
+    $loaded = true;
+    $envFile = dirname(__DIR__) . '/.env';
+    if (!is_file($envFile)) return;
+    $lines = file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    if (!$lines) return;
+    foreach ($lines as $line) {
+        $line = trim($line);
+        if ($line === '' || str_starts_with($line, '#') || !str_contains($line, '=')) continue;
+        [$k, $v] = explode('=', $line, 2);
+        $k = trim($k);
+        $v = trim($v, " \t\n\r\0\x0B\"'");
+        putenv("{$k}={$v}");
+        $_ENV[$k] = $v;
+        $_SERVER[$k] = $v;
+    }
+}
+
 function bn_default_tenant(): array
 {
+    bn_load_env();
     // Credenciais locais opcionais: config/local.php → return ['db' => ['host'=>..,'name'=>..,'user'=>..,'pass'=>..]];
     $local = is_file(__DIR__ . '/../config/local.php') ? (array)(include __DIR__ . '/../config/local.php') : [];
     $t = [
         'slug' => 'principal',
         'nome' => 'Banco de Negócios',
-        'dominios' => [],
+        'dominios' => ['bancodenegocios.com', 'bancodenegocios.com.br'],
         'ativo' => true,
         'principal' => true,
         'db' => [
             'host' => getenv('DB_HOST') ?: '127.0.0.1',
             'name' => getenv('DB_NAME') ?: 'banco_negocios',
             'user' => getenv('DB_USER') ?: 'root',
-            'pass' => getenv('DB_PASS') ?: '',
+            'pass' => getenv('DB_PASS') !== false ? (string)getenv('DB_PASS') : '',
             'port' => (int)(getenv('DB_PORT') ?: 3306),
         ],
     ];
     if (!empty($local['db'])) $t['db'] = array_merge($t['db'], $local['db']);
-    if (!empty($local['dominios'])) $t['dominios'] = (array)$local['dominios'];
+    if (!empty($local['dominios'])) $t['dominios'] = array_values(array_unique(array_merge($t['dominios'], (array)$local['dominios'])));
     return $t;
 }
 
