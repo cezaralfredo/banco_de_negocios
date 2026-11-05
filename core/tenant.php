@@ -46,10 +46,10 @@ function bn_default_tenant(): array
         'ativo' => true,
         'principal' => true,
         'db' => [
-            'host' => getenv('DB_HOST') ?: '127.0.0.1',
-            'name' => getenv('DB_NAME') ?: 'banco_negocios',
-            'user' => getenv('DB_USER') ?: 'root',
-            'pass' => getenv('DB_PASS') !== false ? (string)getenv('DB_PASS') : '',
+            'host' => getenv('DB_HOST') ?: 'localhost',
+            'name' => getenv('DB_NAME') ?: 'bancodenegocios80_buss1000',
+            'user' => getenv('DB_USER') ?: 'bancodenegocios80_buss1000',
+            'pass' => (getenv('DB_PASS') !== false && getenv('DB_PASS') !== '') ? (string)getenv('DB_PASS') : 'yBNsPw7nqrNEU5h2HaV3',
             'port' => (int)(getenv('DB_PORT') ?: 3306),
         ],
     ];
@@ -124,17 +124,25 @@ function bn_resolve_tenant(): array
 
 function bn_connect(array $db, bool $withDb = true): ?PDO
 {
-    $dsn = 'mysql:host=' . ($db['host'] ?? '127.0.0.1') . ';port=' . (int)($db['port'] ?? 3306) . ($withDb ? ';dbname=' . ($db['name'] ?? '') : '') . ';charset=utf8mb4';
-    try {
-        return new PDO($dsn, (string)($db['user'] ?? ''), (string)($db['pass'] ?? ''), [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::ATTR_EMULATE_PREPARES => false,
-        ]);
-    } catch (Throwable $e) {
-        error_log('[CMS] Falha ao conectar no banco do cliente: ' . $e->getMessage());
-        return null;
+    $primaryHost = $db['host'] ?? 'localhost';
+    $hosts = array_values(array_unique(array_filter([$primaryHost, '127.0.0.1', 'localhost'])));
+    $lastErr = null;
+    foreach ($hosts as $h) {
+        $dsn = 'mysql:host=' . $h . ';port=' . (int)($db['port'] ?? 3306) . ($withDb ? ';dbname=' . ($db['name'] ?? '') : '') . ';charset=utf8mb4';
+        try {
+            return new PDO($dsn, (string)($db['user'] ?? ''), (string)($db['pass'] ?? ''), [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                PDO::ATTR_EMULATE_PREPARES => false,
+            ]);
+        } catch (Throwable $e) {
+            $lastErr = $e;
+        }
     }
+    if ($lastErr) {
+        error_log('[CMS] Falha ao conectar no banco do cliente: ' . $lastErr->getMessage());
+    }
+    return null;
 }
 
 /** Pasta pública de mídia do cliente (relativa à raiz do site). */
